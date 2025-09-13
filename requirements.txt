@@ -1,0 +1,10 @@
+python-dotenv 
+notebook 
+langgraph
+langchain-openai
+tavily-python 
+langchain_community
+langchain-tavily
+requests
+streamlit
+langgraph-supervisor

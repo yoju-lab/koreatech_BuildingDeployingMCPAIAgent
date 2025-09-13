@@ -1,0 +1,5 @@
+services:
+  devs:
+    build:
+      context: .
+    command: sleep infinity
