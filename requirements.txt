@@ -10,3 +10,4 @@ streamlit
 langgraph-supervisor
 langchain-mcp-adapters 
 fastmcp
+amadeus
