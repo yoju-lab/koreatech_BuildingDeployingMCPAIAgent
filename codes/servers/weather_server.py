@@ -20,7 +20,7 @@ from datetime import datetime, timezone, timedelta
 from dotenv import load_dotenv
 
 # --- .env 로드: 스크립트 상위 폴더의 .env를 명시적으로 찾고, 기존 env를 덮어쓰기 ---
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = PROJECT_ROOT / ".env"
 load_dotenv(dotenv_path=ENV_PATH, override=True)
 

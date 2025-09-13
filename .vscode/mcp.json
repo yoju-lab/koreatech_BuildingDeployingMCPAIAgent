@@ -6,6 +6,17 @@
       "headers": {
         "CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
       }
-    }
+    },
+    "math": {
+      "type": "stdio",
+      // "command": "${env:USERPROFILE}/miniconda3/envs/mcp_dev/python.exe",
+      "command": "python",
+      "args": ["${workspaceFolder}/codes/servers/math_server.py"],
+      "envFile": "${workspaceFolder}/.env"
+    },
+    "weather": {
+      "type": "http",
+      "url": "http://127.0.0.1:8000/mcp"
+    }    
   }
 }

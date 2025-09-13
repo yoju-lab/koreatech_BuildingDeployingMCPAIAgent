@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM python:3.12-slim
 
 # 기본 도구 설치
 RUN apt-get update && apt-get update --allow-unauthenticated && \

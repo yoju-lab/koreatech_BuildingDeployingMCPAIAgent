@@ -8,3 +8,5 @@ langchain-tavily
 requests
 streamlit
 langgraph-supervisor
+langchain-mcp-adapters 
+fastmcp

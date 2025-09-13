@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 두 개의 MCP 서버 도구(math, weather)를 사용하는 LangGraph ReAct 에이전트 예제
-- math: 로컬 STDIO FastMCP 서버 (예: servers/math_server.py)
+- math: 로컬 STDIO FastMCP 서버 (예: codes/servers/math_server.py)
 - weather: Streamable HTTP FastMCP 서버 (OpenWeatherMap 연동, 예: http://127.0.0.1:8000/mcp)
 필요 패키지:
     pip install langgraph langchain-openai langchain-mcp-adapters python-dotenv
@@ -22,7 +22,7 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 from langgraph.prebuilt import create_react_agent
 
 # --- .env 로드: 스크립트 상위 폴더의 .env를 명시적으로 찾고, 기존 env를 덮어쓰기 ---
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = PROJECT_ROOT / ".env"
 load_dotenv(dotenv_path=ENV_PATH, override=True)
 
@@ -37,7 +37,7 @@ async def build_agent() -> tuple[object, MultiServerMCPClient]:
         "math": {
             "command": "python",
             # 절대경로 권장: 수업 자료 구조에 맞게 수정하세요.
-            "args": [os.path.abspath("servers/math_server.py")],
+            "args": [os.path.abspath("codes/servers/math_server.py")],
             "transport": "stdio",
         },
         # 원격 HTTP(OpenWeatherMap 사용) 날씨 서버
